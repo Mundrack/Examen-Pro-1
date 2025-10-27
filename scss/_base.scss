@@ -1,0 +1,104 @@
+// ==========================================
+// BASE STYLES
+// ==========================================
+
+@import 'variables';
+
+// Reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: $font-size-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-primary;
+  font-weight: $font-weight-regular;
+  line-height: 1.6;
+  color: $color-text;
+  background-color: $color-white;
+  overflow-x: hidden;
+}
+
+// Typography
+h1, h2, h3, h4, h5, h6 {
+  font-weight: $font-weight-bold;
+  line-height: 1.2;
+  margin-bottom: $spacing-sm;
+}
+
+h1 {
+  font-size: $font-size-h1;
+}
+
+h2 {
+  font-size: $font-size-h2;
+}
+
+h3 {
+  font-size: $font-size-h3;
+}
+
+p {
+  margin-bottom: $spacing-sm;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: opacity $transition-speed $transition-ease;
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+// Container utility
+.container {
+  @include container;
+}
+
+// Section utility
+.section {
+  padding: $spacing-xxl 0;
+  
+  &__header {
+    @include flex-between;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__title {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+  }
+  
+  &__link {
+    color: $color-text-light;
+    font-size: $font-size-small;
+    text-decoration: underline;
+    
+    &:hover {
+      color: $color-text;
+    }
+  }
+}

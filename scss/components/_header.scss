@@ -1,0 +1,109 @@
+// ==========================================
+// HEADER COMPONENT
+// ==========================================
+
+@import '../variables';
+@import '../mixins';
+
+.header {
+  background-color: $color-white;
+  padding: $spacing-sm 0;
+  border-bottom: 1px solid $color-border;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  &__container {
+    @include container;
+    @include flex-between;
+  }
+  
+  &__logo {
+    flex-shrink: 0;
+    
+    &-text {
+      font-size: 24px;
+      font-weight: $font-weight-bold;
+      letter-spacing: 2px;
+      color: $color-primary;
+    }
+  }
+  
+  &__nav {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    
+    @include tablet {
+      display: none;
+    }
+  }
+  
+  &__actions {
+    @include flex-center;
+    gap: $spacing-md;
+  }
+  
+  &__language {
+    font-size: $font-size-small;
+    color: $color-text-light;
+    cursor: pointer;
+    
+    &:hover {
+      color: $color-text;
+    }
+  }
+  
+  &__cart {
+    @include button-reset;
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-primary;
+    color: $color-white;
+    @include transition(background-color);
+    
+    &:hover {
+      background-color: $color-secondary;
+    }
+  }
+}
+
+.nav {
+  @include flex-center;
+  gap: $spacing-lg;
+  
+  &__item {
+    // Empty as items don't need specific styles
+  }
+  
+  &__link {
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    color: $color-text;
+    padding: $spacing-xs;
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: $color-primary;
+      @include transition(width);
+    }
+    
+    &:hover {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.cart-icon {
+  font-size: 20px;
+}

@@ -1,0 +1,85 @@
+// ==========================================
+// PRODUCT CARD COMPONENT
+// ==========================================
+
+@import '../variables';
+@import '../mixins';
+
+.products-grid {
+  @include grid-auto(250px, $spacing-md);
+  
+  @include tablet {
+    @include grid-auto(200px, $spacing-sm);
+  }
+  
+  @include mobile {
+    @include grid-auto(150px, $spacing-sm);
+  }
+}
+
+.product-card {
+  @include flex-column;
+  @include transition(transform);
+  cursor: pointer;
+  
+  &:hover {
+    transform: translateY(-8px);
+    
+    .product-card__image img {
+      transform: scale(1.05);
+    }
+  }
+  
+  &__image {
+    position: relative;
+    background-color: #f5f5f5;
+    border-radius: $border-radius-medium;
+    overflow: hidden;
+    margin-bottom: $spacing-sm;
+    @include aspect-ratio(1, 1);
+    
+    img {
+      @include image-cover;
+      @include transition(transform);
+    }
+  }
+  
+  &__name {
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: $spacing-xs;
+    color: $color-text;
+  }
+  
+  &__price {
+    font-size: $font-size-base;
+    font-weight: $font-weight-regular;
+    color: $color-text-light;
+  }
+  
+  @include mobile {
+    &__name {
+      font-size: 11px;
+    }
+    
+    &__price {
+      font-size: 13px;
+    }
+  }
+}
+
+.accessories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-lg;
+  
+  @include tablet {
+    gap: $spacing-md;
+  }
+  
+  @include mobile {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,86 @@
+// ==========================================
+// BANNER COMPONENT
+// ==========================================
+
+@import '../variables';
+@import '../mixins';
+
+.banner {
+  position: relative;
+  min-height: 500px;
+  @include flex-center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $color-white;
+  text-align: center;
+  padding: $spacing-xl $container-padding;
+  
+  &__overlay {
+    @include overlay(rgba(0, 0, 0, 0.4));
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  &__subtitle {
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: $spacing-sm;
+    opacity: 0.9;
+  }
+  
+  &__title {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__button {
+    // Button styles inherited
+  }
+  
+  // Specific banner variants
+  &--choose {
+    background-image: url('../../images/choose.jpg');
+  }
+  
+  &--tech {
+    background-image: url('../../images/tech.jpg');
+  }
+  
+  &--fun {
+    background-image: url('../../images/fun.jpg');
+  }
+  
+  &--guarantee {
+    background-image: url('../../images/guarantee.jpg');
+  }
+  
+  @include tablet {
+    min-height: 400px;
+    
+    &__title {
+      font-size: 28px;
+    }
+  }
+  
+  @include mobile {
+    min-height: 350px;
+    padding: $spacing-lg $container-padding;
+    
+    &__title {
+      font-size: 24px;
+      
+      br {
+        display: none;
+      }
+    }
+  }
+}

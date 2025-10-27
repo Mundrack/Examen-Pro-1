@@ -1,0 +1,109 @@
+/* ==========================================
+   PLACEHOLDER IMAGES
+   Este archivo añade imágenes placeholder con CSS
+   para que puedas ver el diseño inmediatamente
+   ========================================== */
+
+/* Hero */
+.hero {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Banners */
+.banner--choose {
+  background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.banner--tech {
+  background-image: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.banner--fun {
+  background-image: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+.banner--guarantee {
+  background-image: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+/* Product Cards - Placeholders con colores */
+.product-card__image {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  position: relative;
+}
+
+.product-card__image::before {
+  content: '🎾';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  z-index: 1;
+}
+
+.products-grid .product-card:nth-child(1) .product-card__image {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.products-grid .product-card:nth-child(2) .product-card__image {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.products-grid .product-card:nth-child(3) .product-card__image {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.products-grid .product-card:nth-child(4) .product-card__image {
+  background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+}
+
+/* Coach Cards */
+.coach-card:nth-child(1) {
+  background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.coach-card:nth-child(2) {
+  background-image: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+/* Collection Cards */
+.collection-card:nth-child(1) .collection-card__image {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.collection-card:nth-child(2) .collection-card__image {
+  background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+}
+
+/* Story Cards */
+.story-card:nth-child(1) .story-card__image {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.story-card:nth-child(2) .story-card__image {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.story-card:nth-child(3) .story-card__image {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.story-card__image::before {
+  content: '📖';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 64px;
+  z-index: 1;
+}
+
+/* Accessories */
+.accessories-grid .product-card:nth-child(1) .product-card__image::before {
+  content: '⚾';
+}
+
+.accessories-grid .product-card:nth-child(2) .product-card__image::before {
+  content: '🎒';
+}

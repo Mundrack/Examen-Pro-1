@@ -1,0 +1,129 @@
+// ==========================================
+// MIXINS
+// ==========================================
+
+@import 'variables';
+
+// Responsive breakpoints
+@mixin mobile {
+  @media (max-width: $breakpoint-mobile) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: $breakpoint-tablet) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $breakpoint-desktop) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: $breakpoint-large) {
+    @content;
+  }
+}
+
+// Flexbox utilities
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+// Grid utilities
+@mixin grid-auto($min-width, $gap: $spacing-md) {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  gap: $gap;
+}
+
+// Container
+@mixin container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Overlay
+@mixin overlay($color: $color-overlay) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $color;
+  z-index: 1;
+}
+
+// Image cover
+@mixin image-cover {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+// Transitions
+@mixin transition($property: all) {
+  transition: $property $transition-speed $transition-ease;
+}
+
+// Hover effect
+@mixin hover-lift {
+  @include transition(transform);
+  
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+// Button reset
+@mixin button-reset {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+// Text ellipsis
+@mixin text-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Aspect ratio
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  
+  &::before {
+    content: '';
+    display: block;
+    padding-top: ($height / $width) * 100%;
+  }
+  
+  > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}

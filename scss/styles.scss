@@ -1,0 +1,28 @@
+// ==========================================
+// MAIN STYLES - PADDLIX
+// ==========================================
+// This file uses Sass features:
+// - Variables
+// - Nesting
+// - Mixins
+// - Components
+// Following BEM naming convention
+// ==========================================
+
+// Configuration
+@import 'variables';
+@import 'mixins';
+
+// Base styles
+@import 'base';
+
+// Components
+@import 'components/button';
+@import 'components/header';
+@import 'components/hero';
+@import 'components/product-card';
+@import 'components/banner';
+@import 'components/coaches';
+@import 'components/collections';
+@import 'components/stories';
+@import 'components/footer';

@@ -1,0 +1,75 @@
+// ==========================================
+// HERO COMPONENT
+// ==========================================
+
+@import '../variables';
+@import '../mixins';
+
+.hero {
+  position: relative;
+  min-height: 600px;
+  @include flex-center;
+  background-image: url('../../images/hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: $color-white;
+  text-align: left;
+  padding: $spacing-xl $container-padding;
+  
+  &__overlay {
+    @include overlay(rgba(0, 0, 0, 0.3));
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+  }
+  
+  &__subtitle {
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: $spacing-sm;
+    opacity: 0.9;
+  }
+  
+  &__title {
+    font-size: $font-size-h1;
+    font-weight: $font-weight-bold;
+    line-height: 1.2;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__button {
+    // Button styles inherited from button component
+  }
+  
+  @include tablet {
+    min-height: 500px;
+    text-align: center;
+    
+    &__content {
+      @include flex-column;
+      align-items: center;
+    }
+    
+    &__title {
+      font-size: 36px;
+    }
+  }
+  
+  @include mobile {
+    min-height: 400px;
+    
+    &__title {
+      font-size: 28px;
+      
+      br {
+        display: none;
+      }
+    }
+  }
+}

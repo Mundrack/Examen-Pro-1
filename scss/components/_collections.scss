@@ -1,0 +1,94 @@
+// ==========================================
+// COLLECTIONS COMPONENT
+// ==========================================
+
+@import '../variables';
+@import '../mixins';
+
+.collections {
+  background-color: $color-primary;
+  padding: $spacing-xxl 0;
+  
+  &__container {
+    @include container;
+  }
+  
+  &__title {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    color: $color-white;
+    margin-bottom: $spacing-lg;
+  }
+  
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-md;
+    
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: $spacing-sm;
+    }
+  }
+}
+
+.collection-card {
+  position: relative;
+  min-height: 400px;
+  @include flex-center;
+  overflow: hidden;
+  border-radius: $border-radius-medium;
+  cursor: pointer;
+  @include transition(transform);
+  
+  &:hover {
+    transform: scale(1.02);
+    
+    .collection-card__image img {
+      transform: scale(1.1);
+    }
+  }
+  
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    &::after {
+      content: '';
+      @include overlay(rgba(0, 0, 0, 0.4));
+    }
+    
+    img {
+      @include image-cover;
+      @include transition(transform);
+    }
+  }
+  
+  &__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: $color-white;
+  }
+  
+  &__title {
+    font-size: $font-size-h2;
+    font-weight: $font-weight-bold;
+    margin-bottom: $spacing-md;
+  }
+  
+  &__button {
+    // Button styles inherited
+  }
+  
+  @include mobile {
+    min-height: 300px;
+    
+    &__title {
+      font-size: 24px;
+    }
+  }
+}
