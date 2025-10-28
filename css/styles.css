@@ -355,11 +355,6 @@ button {
   margin-bottom: 16px;
   position: relative;
 }
-.product-card__image::before {
-  content: "";
-  display: block;
-  padding-top: 100%;
-}
 .product-card__image > * {
   position: absolute;
   top: 0;
@@ -453,7 +448,7 @@ button {
   margin-bottom: 32px;
 }
 .banner--choose {
-  background-image: url("../../images/choose.jpg");
+  background-image: url("../../images/HomePage.jpg");
 }
 .banner--tech {
   background-image: url("../../images/tech.jpg");
